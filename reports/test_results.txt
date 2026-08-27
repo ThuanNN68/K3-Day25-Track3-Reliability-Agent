@@ -1,0 +1,17 @@
+Day 25 Reliability Lab - verification log
+
+Command (equivalent to pytest -q, with explicit project dependencies):
+python -m pytest -q
+
+Result:
+...................................XXXXXXX                               [100%]
+35 passed, 7 xpassed in 7.15s
+
+Focused checklist run, with Redis service healthy:
+python -m pytest tests/test_circuit_breaker.py tests/test_cache.py tests/test_gateway_contract.py tests/test_redis_cache.py tests/test_todo_requirements.py -q
+
+Result:
+...............................XXXXXXX                                   [100%]
+31 passed, 7 xpassed in 5.06s
+
+Redis status: healthy on localhost:6379.
